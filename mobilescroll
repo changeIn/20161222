@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>移动端无缝轮播（全适用）</title>
+    <meta name="keywords" content="移动端无缝轮播（全适用）"/>
+    <meta name="description" content="移动端无缝轮播（全适用）"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--自动将http的不安全请求升级为https-->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112921948-2"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}  gtag('js', new Date()); gtag('config', 'UA-112921948-2'); </script>
+    <script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?8f0526b5be5f2aeee12cc398895a197b";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
+
+    <script>document.documentElement.style.fontSize = document.documentElement.clientWidth / 750 * 100 + 'px';</script>
+    <style type="text/css">
+        html, body, content, div, ul, li, img, button, span, input {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        input, button {
+            border: none;
+            outline: none;
+            /*-webkit-tap-highlight-color: transparent;*/
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /*透明度设置为0，去掉点击链接和文本框对象时默认的灰色半透明覆盖层(iOS)或者虚框(Android)*/
+            -webkit-appearance: none;
+            white-space: pre;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            border: none;
+            pointer-events: none;
+        }
+
+        .row {
+            width: 29.20rem;
+            height: 4.56rem;
+            overflow: hidden;
+            /*background: url("https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/714_07_04.jpg") no-repeat top center;*/
+            /*background-size:auto 100% ;*/
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .box1, .box2 {
+            position: absolute;
+            width: 29.2rem;
+            height: 4.56rem;
+            overflow: hidden;
+        }
+
+        .box2 {
+            left: 29.20rem;
+            width: 36.5rem;
+        }
+
+        .box img {
+            float: left;
+            width: 3.65rem;
+            height: 4.56rem;
+        }
+
+    </style>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<div class="content">
+    <div class="row">
+        <div class="box" id="box">
+            <div class="box1" id="box1">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll4_03.png">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll4_04.png">
+
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll1_03.png">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll1_04.png">
+
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll2_03.png">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll2_04.png">
+
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll3_03.png">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll3_04.png">
+
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll4_03.png">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll4_04.png">
+            </div>
+            <div class="box2" id="box2">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll4_03.png">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll4_04.png">
+
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll1_03.png">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll1_04.png">
+
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll2_03.png">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll2_04.png">
+
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll3_03.png">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll3_04.png">
+
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll4_03.png">
+                <img src="https://50jia-website.oss-cn-beijing.aliyuncs.com/tuiguang/hd0714/scroll4_04.png">
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript">
+
+    window.onload = function () {
+        var _box1 = document.getElementById("box1");
+        var _box2 = document.getElementById("box2");
+        var x = 0;
+        var fun = function () {
+            x = x.toFixed(1);
+            _box1.style.left = x + 'rem';
+            x -= 0.1;
+            var x2 = (x + 29.3).toFixed(1),
+                x2 = parseFloat(x2);
+
+            _box2.style.left = x2 + 'rem';
+            console.log(x, x2);
+            if ((x + 58.2) == 0) {
+                x = 0;
+            }
+        };
+        setInterval(fun, 100);
+    };
+
+
+</script>
