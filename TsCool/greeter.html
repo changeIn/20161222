@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Typescript  Cool</title>
+    <title>Typescript Cool</title>
+    <style>
+        .main {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 100%;
+            background-color: blue;
+        }
+
+        .left {
+            width: 20%;
+            height: 200px;
+            background: green;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+        }
+
+        .right {
+            width: 200px;
+            height: 500px;
+            background-color: red;
+        }
+    </style>
 </head>
+
 <body>
-<script src="greeter.js"></script>
+    <script src="greeter.js"></script>
 
-
+    <div class="main">
+        <div class="left"></div>
+        <div class="content"></div>
+        <div class="right"></div>
+    </div>
 </body>
+
 </html>
